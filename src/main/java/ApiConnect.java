@@ -17,11 +17,11 @@ public class ApiConnect extends HttpServlet{
 //    }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String uid = req.getParameter("username");
-        String pwd = req.getParameter("password");
-//Hoi
-        if (uid.toLowerCase().equals("qq") && pwd.equals("qq")) {
-            resp.addCookie(new Cookie("session", uid));
+        String cpr = req.getParameter("cpr");
+        String diet = req.getParameter("kost");
+        String liquid = req.getParameter("vaeske");
+        if (cpr.toLowerCase().equals("qq") && diet.equals("qq")) {
+            resp.addCookie(new Cookie("session", cpr));
             PrintWriter writer = resp.getWriter();
             resp.sendRedirect("PersonaleHome.html");
         } else {
